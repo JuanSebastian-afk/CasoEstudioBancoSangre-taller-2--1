@@ -66,7 +66,7 @@ int main() {
             d=3;b=3;
             std::cout << "El total de registros mayores de edad vallecaucanos B+: "<<reporte.donorAdult(d,b)<<endl<<endl;
             
-            std::cout << "Ingrese nombre para ver unidades donadas: ";
+            std::cout << "Ingrese id para ver unidades donadas: ";
             std::getline(std::cin, donorName);
             reporte.bloodDonorUnits(donorName);
             std::cout << "\nReporte por año/departamento:\n";
