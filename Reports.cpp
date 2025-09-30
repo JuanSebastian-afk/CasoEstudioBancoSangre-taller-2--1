@@ -50,7 +50,7 @@ int Reports::donorAdult(const int& district, const int& bloodType) const {
 
 int Reports::bloodDonorUnits(const std::string& donorName) const {
     for (const auto& d : auxDonor) {
-        if (d.getName() == donorName) {
+        if (d.getId() == donorId) {
             std::cout << "Donante: " << d.getName() << "\n";
             std::cout << "Unidades donadas: " << d.getUnits() << "\n";
             std::cout << "Fecha última donación: " << d.getDate() << "\n";
