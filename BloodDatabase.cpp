@@ -100,16 +100,25 @@ void BloodDatabase::getDonorDetails() {
 
     long long phone;
     while (true) {
-        std::cout << "Número de móvil (10 dígitos): ";
+        std::cout << "Número de móvil (10 dígitos, debe empezar por 3): ";
         std::string input;
         std::getline(std::cin, input);
-        if (input.size() == 10 && std::all_of(input.begin(), input.end(), ::isdigit)) {
+
+        // Condiciones:
+        // 1. Longitud 10
+        // 2. Solo dígitos
+        // 3. Primer dígito = '3'
+        if (input.size() == 10 && 
+            std::all_of(input.begin(), input.end(), ::isdigit) &&
+            input[0] == '3') 
+        {
             phone = std::stoll(input);
             break;
         } else {
-            std::cout << "❌ Error: el número debe tener exactamente 10 dígitos.\n";
+            std::cout << "❌ Error: el número debe tener 10 dígitos y empezar por 3.\n";
         }
     }
+
     newDonor.setNumber(phone);
 
     std::cout << "Unidades de sangre donadas: ";
